@@ -54,7 +54,7 @@ func SyncTask(up *UserPool) {
 	// Init Client
 	proxymanClient := v2proxyman.NewHandlerServiceClient(conn)
 	statClient := v2stats.NewStatsServiceClient(conn)
-	httpClient := &http.Client{Timeout: 3 * time.Second}
+	httpClient := &http.Client{Timeout: 15 * time.Second}
 
 	resp := syncResp{}
 	err = getJson(httpClient, API_ENDPOINT, &resp)
