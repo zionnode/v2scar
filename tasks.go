@@ -40,7 +40,7 @@ type syncResp struct {
 func SyncTask(up *UserPool) {
 
 	// Connect to v2ray rpc
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 	conn, err := grpc.DialContext(ctx, GRPC_ENDPOINT, grpc.WithInsecure(), grpc.WithBlock())
 
